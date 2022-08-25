@@ -1,4 +1,2 @@
 # Cosmos-Chains-Sync
-## Fresh Peers and Addressbooks
-
-
+## Example for change the addrbook
