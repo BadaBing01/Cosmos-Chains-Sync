@@ -1,0 +1,2 @@
+Peers=ef45c32b232b772dd82b2f801f0e6abd3842e66c@164.90.154.41:26656
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.cantod/config/config.toml
