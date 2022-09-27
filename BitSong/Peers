@@ -1,0 +1,2 @@
+Peers=eddccf92e8d7d746f6a42ad08b9800037e3633cf@51.195.189.48:21036
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.bitsongd/config/config.toml
