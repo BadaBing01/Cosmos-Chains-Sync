@@ -1,0 +1,2 @@
+peers="2bf8002d0f65c3d86fca31ea0f043d912682c3e0@65.109.70.23:17356"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml
