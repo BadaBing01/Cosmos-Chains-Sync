@@ -1,5 +1,5 @@
 # Cosmos-Chains-Sync
-## Example for change the addrbook
+## Addrbook replacement example
 
 ```sudo systemctl stop strided
 rm $HOME/.stride/config/addrbook.json
