@@ -1,4 +1,4 @@
-## StateSync
+## State Sync
 ```
 SNAP_RPC=http://65.109.188.119:46657
 peers="a7bb3eb07cd22f9d96b54d61e2b4b3f2bfe33cf0@65.109.188.119:46656"
