@@ -1,0 +1,2 @@
+peers="9872ab6a76199fcbeca1f7f791755e726aa97686@116.202.165.116:11656,f6a3fcd1910ab808192c4c40a29fa0e85cd874cd@52.18.46.103:26656,525696e557db51c4d5f5bca1d7152753c7426c2e@34.192.150.110:26656,f0758765ef0350d5cbbdeebf0b8e84f76e21c46d@54.221.204.97:26656,3a445bfdbe2d0c8ee82461633aa3af31bc2b4dc0@prod-pnet-seed-node.lavanet.xyz:26656,e593c7a9ca61f5616119d6beb5bd8ef5dd28d62d@prod-pnet-seed-node2.lavanet.xyz:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.lava/config/config.toml
