@@ -19,3 +19,15 @@ okp4d tendermint unsafe-reset-all --home /root/.okp4d --keep-addr-book
 sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.okp4d/config/app.toml
 sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ```
+## State Sync
+```
+cd $HOME
+snap install lz4
+sudo systemctl stop okp4d
+cp $HOME/.okp4d/data/priv_validator_state.json $HOME/.okp4d/priv_validator_state.json.backup
+rm -rf $HOME/.okp4d/data
+curl -o - -L http://65.109.188.119:8000/okp/okp-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.okp4d --strip-components 2
+mv $HOME/.okp4d/priv_validator_state.json.backup $HOME/.okp4d/data/priv_validator_state.json
+wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/BadaBing01/Cosmos-Chains-Sync/main/OKP4/addrbook.json"
+sudo systemctl restart okp4d && journalctl -u okp4d -f -o cat
+```
