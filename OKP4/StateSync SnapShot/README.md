@@ -19,7 +19,7 @@ okp4d tendermint unsafe-reset-all --home /root/.okp4d --keep-addr-book
 sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.okp4d/config/app.toml
 sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ```
-## State Sync
+## Snap Shot
 ```
 cd $HOME
 snap install lz4
