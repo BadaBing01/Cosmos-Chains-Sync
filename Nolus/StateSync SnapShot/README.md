@@ -19,3 +19,14 @@ nolusd tendermint unsafe-reset-all --home /root/.nolusd --keep-addr-book
 sed -i -e "s/^snapshot-interval *=.*/snapshot-interval = \"1500\"/" $HOME/.nolusd/config/app.toml
 sudo systemctl restart nolusd && sudo journalctl -u nolusd -f -o cat
 ```
+## Snap Shot
+```
+cd $HOME
+snap install lz4
+sudo systemctl stop nolusd
+cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
+rm -rf $HOME/.nolus/data
+curl -o - -L http://167.235.231.59:8000/nolus-core/nolusdata.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.nolus --strip-components 2
+mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
+sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
+```
