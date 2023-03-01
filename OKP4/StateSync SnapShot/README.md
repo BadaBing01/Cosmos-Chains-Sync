@@ -22,7 +22,7 @@ sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 ## Snap Shot
 ```
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop okp4d
 cp $HOME/.okp4d/data/priv_validator_state.json $HOME/.okp4d/priv_validator_state.json.backup
 rm -rf $HOME/.okp4d/data
