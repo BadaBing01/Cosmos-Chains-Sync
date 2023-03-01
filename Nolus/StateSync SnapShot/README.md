@@ -26,7 +26,7 @@ snap install lz4
 sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
-curl -o - -L http://167.235.231.59:8000/nolus-core/nolusdata.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.nolus --strip-components 2
+curl -o - -L http://167.235.231.59:8000/nolusdata.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.nolus --strip-components 2
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 ```
