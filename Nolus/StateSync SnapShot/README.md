@@ -22,7 +22,7 @@ sudo systemctl restart nolusd && sudo journalctl -u nolusd -f -o cat
 ## Snap Shot
 ```
 cd $HOME
-snap install lz4
+apt install lz4
 sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
 rm -rf $HOME/.nolus/data
